@@ -11,15 +11,25 @@ import java.util.List;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService
 {
-    private CustomerRepository customerRepository;
-
-    // Constructor level injection
+    // Member level injection
     @Autowired
-    public CustomerServiceImpl(CustomerRepository customerRepository)
-    {
-        System.out.println("This is now using constructor injection");
-        this.customerRepository = customerRepository;
-    }
+    private CustomerRepository customerRepository;
+//
+//    // Constructor level injection
+//    @Autowired
+//    public CustomerServiceImpl(CustomerRepository customerRepository)
+//    {
+//        System.out.println("This is now using constructor injection");
+//        this.customerRepository = customerRepository;
+//    }
+//
+//    // Setter level injection
+//    @Autowired
+//    public void setCustomerRepository(CustomerRepository customerRepository)
+//    {
+//        System.out.println("This is now using setter injection");
+//        this.customerRepository = customerRepository;
+//    }
 
     @Override
     public List<Customer> findAll()
