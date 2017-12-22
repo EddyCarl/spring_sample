@@ -11,9 +11,15 @@ import java.util.List;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService
 {
-    // This automatically pulls the bean in to this line (The HibernateCustomerRepositoryImpl bean)
-    @Autowired
     private CustomerRepository customerRepository;
+
+    // Setter level autowire injection
+    @Autowired
+    public void setCustomerRepository(CustomerRepository customerRepository)
+    {
+        System.out.println("This is now using setter injection");
+        this.customerRepository = customerRepository;
+    }
 
     @Override
     public List<Customer> findAll()
