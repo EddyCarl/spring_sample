@@ -9,8 +9,7 @@
           class="com.pluralsight.repository.HibernateCustomerRepositoryImpl" />
 
     <bean name="customerService"
-          class="com.pluralsight.service.CustomerServiceImpl" >
-        <constructor-arg index="0" ref="customerRepositoryBean"/>
+          class="com.pluralsight.service.CustomerServiceImpl" autowire="byType">
     </bean>
 
 </beans>
