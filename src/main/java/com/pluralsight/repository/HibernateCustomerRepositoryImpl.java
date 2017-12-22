@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.pluralsight.model.Customer;
+import org.springframework.stereotype.Repository;
 
+// The bracketed bit gives the repository its "bean name"
+@Repository("customerRepository")
 public class HibernateCustomerRepositoryImpl implements CustomerRepository
 {
 
-    /* (non-Javadoc)
-     * @see com.pluralsight.repository.CustomerRepository#findAll()
-     */
     @Override
     public List<Customer> findAll()
     {
