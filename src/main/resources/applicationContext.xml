@@ -5,11 +5,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="customerRepositoryBean"
+    <bean name="foo"
           class="com.pluralsight.repository.HibernateCustomerRepositoryImpl" />
 
     <bean name="customerService"
-          class="com.pluralsight.service.CustomerServiceImpl" autowire="byType">
+          class="com.pluralsight.service.CustomerServiceImpl" autowire="byName">
     </bean>
 
 </beans>
