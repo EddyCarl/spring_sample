@@ -10,3 +10,4 @@ Topics covered:
 - Using XML files to define beans and autowire our application
 - Using annotations to configure our application (In conjunction with the XML file - Just using it to a lesser extent)
 - Using a pure Java implementation where there is no longer an applicationContext.xml file in the project
+- Playing with Bean scopes
