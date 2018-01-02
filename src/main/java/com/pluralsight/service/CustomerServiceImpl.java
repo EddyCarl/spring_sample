@@ -2,20 +2,16 @@ package com.pluralsight.service;
 
 import com.pluralsight.model.Customer;
 import com.pluralsight.repository.CustomerRepository;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-// The bracketed bit gives the service its "bean name"
-@Service("customerService")
 public class CustomerServiceImpl implements CustomerService
 {
+    @Autowired
     private CustomerRepository customerRepository;
 
-    public CustomerServiceImpl()
-    {
-
-    }
+    public CustomerServiceImpl() {}
 
     public CustomerServiceImpl(CustomerRepository customerRepository)
     {
