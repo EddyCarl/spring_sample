@@ -12,17 +12,22 @@ public class CustomerServiceImpl implements CustomerService
 {
     private CustomerRepository customerRepository;
 
+    public CustomerServiceImpl()
+    {
+
+    }
+
     public CustomerServiceImpl(CustomerRepository customerRepository)
     {
+        System.out.println("We are using constructor injection.");
         this.customerRepository = customerRepository;
     }
 
-    // Setter injection is no longer required so this method can be removed
-
-//    public void setCustomerRepository(CustomerRepository customerRepository)
-//    {
-//        this.customerRepository = customerRepository;
-//    }
+    public void setCustomerRepository(CustomerRepository customerRepository)
+    {
+        System.out.println("We are using setter injection.");
+        this.customerRepository = customerRepository;
+    }
 
     @Override
     public List<Customer> findAll()
