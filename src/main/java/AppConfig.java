@@ -1,5 +1,3 @@
-import com.pluralsight.repository.CustomerRepository;
-import com.pluralsight.repository.HibernateCustomerRepositoryImpl;
 import com.pluralsight.service.CustomerService;
 import com.pluralsight.service.CustomerServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -14,13 +12,11 @@ public class AppConfig
     public CustomerService getCustomerService()
     {
         CustomerServiceImpl service = new CustomerServiceImpl();
-//        service.setCustomerRepository(getCustomerRepository());
         return service;
     }
 
-    @Bean(name = "customerRepository")
-    public CustomerRepository getCustomerRepository()
-    {
-        return new HibernateCustomerRepositoryImpl();
-    }
+    // No longer need a bean defined for the customerRepository as the
+    // autowired annotation allows this to occur due to the fact that
+    // the HibernateImpl class is within the "com.pluralsight" package
+    // that we are component scanning on.
 }
