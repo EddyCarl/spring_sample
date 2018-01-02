@@ -2,7 +2,6 @@ package com.pluralsight.service;
 
 import com.pluralsight.model.Customer;
 import com.pluralsight.repository.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,25 +10,12 @@ import java.util.List;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService
 {
-    // Member level injection
-    @Autowired
     private CustomerRepository customerRepository;
-//
-//    // Constructor level injection
-//    @Autowired
-//    public CustomerServiceImpl(CustomerRepository customerRepository)
-//    {
-//        System.out.println("This is now using constructor injection");
-//        this.customerRepository = customerRepository;
-//    }
-//
-//    // Setter level injection
-//    @Autowired
-//    public void setCustomerRepository(CustomerRepository customerRepository)
-//    {
-//        System.out.println("This is now using setter injection");
-//        this.customerRepository = customerRepository;
-//    }
+
+    public void setCustomerRepository(CustomerRepository customerRepository)
+    {
+        this.customerRepository = customerRepository;
+    }
 
     @Override
     public List<Customer> findAll()
