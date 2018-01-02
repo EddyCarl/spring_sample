@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Service("customerService")
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class CustomerServiceImpl implements CustomerService
 {
     private CustomerRepository customerRepository;
@@ -20,14 +20,12 @@ public class CustomerServiceImpl implements CustomerService
 
     public CustomerServiceImpl(CustomerRepository customerRepository)
     {
-        System.out.println("We are using constructor injection.");
         this.customerRepository = customerRepository;
     }
 
     @Autowired
     public void setCustomerRepository(CustomerRepository customerRepository)
     {
-        System.out.println("We are using setter injection.");
         this.customerRepository = customerRepository;
     }
 
