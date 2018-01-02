@@ -12,10 +12,17 @@ public class CustomerServiceImpl implements CustomerService
 {
     private CustomerRepository customerRepository;
 
-    public void setCustomerRepository(CustomerRepository customerRepository)
+    public CustomerServiceImpl(CustomerRepository customerRepository)
     {
         this.customerRepository = customerRepository;
     }
+
+    // Setter injection is no longer required so this method can be removed
+
+//    public void setCustomerRepository(CustomerRepository customerRepository)
+//    {
+//        this.customerRepository = customerRepository;
+//    }
 
     @Override
     public List<Customer> findAll()

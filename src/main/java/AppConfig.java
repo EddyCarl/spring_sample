@@ -14,8 +14,11 @@ public class AppConfig
     @Bean(name = "customerService")
     public CustomerService getCustomerService()
     {
-        CustomerServiceImpl service = new CustomerServiceImpl();
-        service.setCustomerRepository(getCustomerRepository());
+        // Remove the setter injection that we had previously in favour of constructor injection
+        // We could just return the new CustomerServiceImpl straight away to save another line
+
+        CustomerServiceImpl service = new CustomerServiceImpl(getCustomerRepository());
+//        service.setCustomerRepository(getCustomerRepository());
         return service;
     }
 
