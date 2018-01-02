@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Service("customerService")
-@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON) // Adding a constant to do away with the "singleton" string
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Adding a constant to do away with the "singleton" string
 public class CustomerServiceImpl implements CustomerService
 {
     private CustomerRepository customerRepository;
